@@ -8,18 +8,18 @@ if (isset($_POST['submit'])) {
     $mail = htmlspecialchars($_POST['mail'], ENT_QUOTES);
     $output_form = false;
 
-    if (empty($mail) && empty($name)) {
+    if (!isMail($mail) && empty($name)) {
         echo ' 名前とメールアドレスを確認して下さい<br>';
         $output_form = true;
     }
     
-    if (!empty($mail) && empty($name)) {
+    if (isMail($mail) && empty($name)) {
         echo ' 名前を確認して下さい<br>';
         $output_form = true;
     }
     
-    if (empty($mail) && !empty($name)) {
-        echo ' アドレスを確認して下さい<br>';
+    if (!isMail($mail) && !empty($name)) {
+        echo ' メールアドレスを確認して下さい<br>';
         $output_form = true;
     }
     
