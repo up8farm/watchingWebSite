@@ -1,5 +1,5 @@
 <?php
-    require_once('connectDb.php');
+    require_once('func.php');
 
     if(isset($_POST['submit'])){//メールアドレス登録ボタンが押されたら
         $name = htmlspecialchars($_POST['name'], ENT_QUOTES);
@@ -15,19 +15,6 @@
         $stmt->bindValue(':address', $address ,PDO::PARAM_STR);
 
         $stmt->execute();
-    }
-    
-    /**
-     * メールアドレスとして正しいか判定
-     * @param string $mail チェックするメールアドレス
-     * @return boolean 正しければtrueを返す
-     */
-    function isMail($mail) {
-    if (preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/", $mail)) {
-            return true;
-        } else {
-            return false;
-        }
     }
 ?>
 
