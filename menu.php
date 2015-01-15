@@ -5,6 +5,6 @@
 <ol>
     <li><a href="RegisterMailAddress.php">メール登録</a></li>
     <li><a href="RegisterMailAddress.php">メール登録</a></li>
-    <li><a href="RegisterMailAddress.php">メール登録</a></li>
-    <li><a href="RegisterMailAddress.php">メール登録</a></li>
+    <li><a href="RegisterUrl.php">監視URL登録</a></li>
+    <li><a href="RegisterUrl.php">監視URL登録</a></li>
 </ol>
