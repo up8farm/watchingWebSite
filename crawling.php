@@ -38,9 +38,9 @@ function sendMail($subject, $msg) {
     mb_internal_encoding("UTF-8");
     $from = 'From:raspberrypi777@gmail.com';
     $dbh = dbConnect();
-    $sql = 'SELECT address FROM tb_send_mail';
+    $sql = 'SELECT mail FROM tb_send_mail';
     foreach($dbh->query($sql) as $row){
-        $to = $row['address'];
+        $to = $row['mail'];
         mb_send_mail($to, $subject, $msg, $from);
     }
 }
