@@ -17,7 +17,7 @@ CREATE TABLE tb_crawling_url(
 CREATE TABLE tb_send_mail(
     id      INT AUTO_INCREMENT,
     name    VARCHAR(100) NOT NULL,
-    address VARCHAR(100) NOT NULL,
+    mail VARCHAR(100) NOT NULL,
     PRIMARY KEY (id))-- 主キーの設定
     ENGINE=InnoDB;-- ストレージエンジンの設定
 
