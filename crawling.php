@@ -15,10 +15,8 @@ foreach($stmt as $row){
 
         $re_hash = hash_file('md5', $url);
 
-        
         if($hash !== $re_hash){// 前回クローリング時からハッシュ値が変化している
-           echo 'changed';
-           sendMail();
+           sendMail("監視URL変更",　$title);
            $sql ="
                UPDATE tb_crawling_url
                SET hash = '$re_hash'
@@ -32,7 +30,6 @@ foreach($stmt as $row){
  * tb_send_mailテーブルに登録されたアドレスへメールを送信する
  * @param string $subject メールの件名
  * @param string $msg メールの内容
- * @return
  */
 function sendMail($subject, $msg) {
     mb_internal_encoding("UTF-8");
