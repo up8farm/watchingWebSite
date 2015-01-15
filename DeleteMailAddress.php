@@ -8,8 +8,11 @@
     $db = getDb();
 
     if (isset($_POST['submit'])) {
-    //削除するクエリ
-
+        //削除するクエリ
+        foreach ($_POST['todelete'] as $delete_id) {
+            $db->query("DELETE FROM tb_send_mail WHERE id = $delete_id");
+        }
+        
         echo '削除しました';
     }
 
