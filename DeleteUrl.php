@@ -1,4 +1,4 @@
-<p>監視URL削除</p>
+<h1>監視URL削除</h1>
 <form method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
 
     <?php
