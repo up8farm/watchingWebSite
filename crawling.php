@@ -35,9 +35,9 @@ foreach($stmt as $row){
 function sendMail($subject, $msg) {
     mb_internal_encoding("UTF-8");
     $from = 'From:raspberrypi777@gmail.com';
-    $dbh = dbConnect();
+    $db = getDb();
     $sql = 'SELECT mail FROM tb_send_mail';
-    foreach($dbh->query($sql) as $row){
+    foreach($db->query($sql) as $row){
         $to = $row['mail'];
         mb_send_mail($to, $subject, $msg, $from);
     }
