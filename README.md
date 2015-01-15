@@ -57,7 +57,7 @@ gmailアカウントからのメール送信設定
     UseSTARTTLS=YES
     UseTLS=Yes
 
-ファイルの取得
+Apacheのルートディレクトリでファイルを取得
 
     $ cd /var/www
     $ git clone https://github.com/up8farm/test.git
