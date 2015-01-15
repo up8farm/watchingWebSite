@@ -2,8 +2,8 @@
     require_once('func.php');
 
     if(isset($_POST['submit'])){//メールアドレス登録ボタンが押されたら
-        $title = htmlspecialchars($_POST['title'], ENT_QUOTES)
-        $url = htmlspecialchars($_POST['url'], ENT_QUOTES)
+        $title = htmlspecialchars($_POST['title'], ENT_QUOTES);
+        $url = htmlspecialchars($_POST['url'], ENT_QUOTES);
         $hash = hash_file('md5', $url);
   
         $db = getDb();
