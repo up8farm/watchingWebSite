@@ -72,7 +72,7 @@ func.phpをエディタで開き、getDb関数の中にあるユーザ名($user)
     
     $ vi /var/www/watchingWebSite/func.php
 
-crawling.phpをクーロンに登録
+crawling.phpをクーロンに登録し、監視間隔を設定
 
     $ crontab -e
     
