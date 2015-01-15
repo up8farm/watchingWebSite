@@ -16,7 +16,7 @@ foreach($stmt as $row){
         $re_hash = hash_file('md5', $url);
 
         if($hash !== $re_hash){// 前回クローリング時からハッシュ値が変化している
-           sendMail("監視URL変更",　$title);
+           sendMail("監視URL変更", $title);
            $sql ="
                UPDATE tb_crawling_url
                SET hash = '$re_hash'
