@@ -24,6 +24,6 @@
     }
     ?>
 
-    <input type="submit" name="submit" value="通知メールアドレス登録"/>
+    <input type="submit" name="submit" value="通知メールアドレス削除">
 </form>
-<a href="menu.php">通知メールアドレス削除</a>
+<a href="menu.php">メニュー画面へ</a>
