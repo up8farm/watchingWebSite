@@ -1,4 +1,4 @@
-<p>通知メールアドレス削除</p>
+<h1>通知メールアドレス削除</h1>
 <form method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
 
     <?php
