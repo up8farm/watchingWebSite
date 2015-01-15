@@ -18,7 +18,7 @@
 
     foreach ($stmt as $row) {
         echo '<input type="checkbox" value="' . $row['id'] . '" name="todelete[]">';
-        echo $row['name'];
+        echo $row['name'] . " : ";
         echo $row['mail'];
         echo '<br>';
     }
