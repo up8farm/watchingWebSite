@@ -35,6 +35,7 @@ if (!empty($address) && !empty($name)) {
     $stmt->bindValue(':address', $address, PDO::PARAM_STR);
 
     $stmt->execute();
+    echo $address . $name . "を登録しました";
 }
 
 if ($output_form) {
