@@ -48,7 +48,7 @@ if ($output_form) {
     <form method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
         名前：<input type="text" name="name"/><br>
         メール：<input type="text" name="mail"/><br>
-        <input type="submit" name="submit" value="メールアドレス登録"/>
+        <input type="submit" name="submit" value="通知メールアドレス登録"/>
     </form>
     <a href="menu.php">メニュー画面へ</a>
     <?php
