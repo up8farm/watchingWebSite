@@ -68,6 +68,6 @@ Apacheのルートディレクトリでファイルを取得
     
     mysql> source /var/www/watchingWebSite/create_db_table.sql
     
-func.phpをエディタで開き、getDb関数の中にあるユーザ名($user)、パスワード($pass)を変更する
+func.phpをエディタで開き、getDb関数の中にあるユーザ名($user)、パスワード($pass)を変更
     
     $ vi /var/www/watchingWebSite/func.php
