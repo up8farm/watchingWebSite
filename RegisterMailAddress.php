@@ -8,17 +8,17 @@ if (isset($_POST['submit'])) {
     $mail = htmlspecialchars($_POST['mail'], ENT_QUOTES);
     $output_form = false;
 
-    if (!isMail($mail) && empty($name)) {
+    if (empty($mail) && empty($name)) {
         echo ' 名前とメールアドレスを確認して下さい<br>';
         $output_form = true;
     }
     
-    if (isMail($mail) && empty($name)) {
+    if (!empty($mail) && empty($name)) {
         echo ' 名前を確認して下さい<br>';
         $output_form = true;
     }
     
-    if (isMail($mail) && !empty($name)) {
+    if (empty($mail) && !empty($name)) {
         echo ' アドレスを確認して下さい<br>';
         $output_form = true;
     }
@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
     $output_form = true;
 }
 
-if (isMail($mail) && !empty($name)) {
+if (!empty($mail) && !empty($name)) {
     $db = getDb();
 
     //tb_send_mailテーブルにフォームから入力された名前とメールアドレスを挿入する
