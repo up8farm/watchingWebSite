@@ -35,7 +35,8 @@ if (!empty($address) && !empty($name)) {
     $stmt->bindValue(':address', $address, PDO::PARAM_STR);
 
     $stmt->execute();
-    echo $address . $name . "を登録しました";
+    echo $address . $name . "を登録しました" . <br>;
+    echo '<a href="menu.php">メニュー画面へ</a>';
 }
 
 if ($output_form) {
@@ -46,6 +47,7 @@ if ($output_form) {
         メール：<input type="text" name="address"/><br>
         <input type="submit" name="submit" value="メールアドレス登録"/>
     </form>
+    <a href="menu.php">メニュー画面へ</a>
     <?php
 }
 ?>
