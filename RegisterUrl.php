@@ -1,5 +1,5 @@
 <?php
-    require_once('connectDb.php');
+    require_once('func.php');
 
     if(isset($_POST['submit'])){//メールアドレス登録ボタンが押されたら
         $title = htmlspecialchars($_POST['title'], ENT_QUOTES)
@@ -14,19 +14,6 @@
         $stmt->bindValue(':hash', $hash ,PDO::PARAM_STR);
 
         $stmt->execute();
-    }
-
-    /**
-     * URLとして正しいか判定
-     * @param string $url チェックするメールアドレス
-     * @return boolean 正しければtrueを返す
-     */
-    function isUrl($text) {
-        if (preg_match("/^http(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)$/", $text)) {
-            return true;
-        } else {
-            return false;
-        }
     }
 ?>
 
