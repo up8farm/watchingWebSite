@@ -2,7 +2,7 @@
 require_once('func.php');
 
 //crontabに登録し、定期的に実行
-
+echo 'aaa';
 $db = getDb();
 $sql = 'SELECT id, title, url, hash FROM tb_crawling_url';
 $stmt = $db->query($sql);
@@ -16,6 +16,7 @@ foreach($stmt as $row){
         $re_hash = hash_file('md5', $url);
 
         if($hash !== $re_hash){// 前回クローリング時からハッシュ値が変化している
+            echo 'bbb';
            sendMail("監視URL変更", $title);
            $sql ="
                UPDATE tb_crawling_url
