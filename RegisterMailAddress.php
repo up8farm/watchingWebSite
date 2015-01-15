@@ -44,7 +44,7 @@ if (isMail($mail) && !empty($name)) {
 
 if ($output_form) {
     ?>
-    <p>通知メールアドレス登録</p>
+    <h1>通知メールアドレス登録</h1>
     <form method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
         名前：<input type="text" name="name"/><br>
         メール：<input type="text" name="mail"/><br>
