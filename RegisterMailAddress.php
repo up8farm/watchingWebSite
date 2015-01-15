@@ -6,6 +6,7 @@ if (isset($_POST['submit'])) {
 
     $name = htmlspecialchars($_POST['name'], ENT_QUOTES);
     $mail = htmlspecialchars($_POST['mail'], ENT_QUOTES);
+    $output_form = false;
 
     if (!isMail($mail) && empty($name)) {
         echo ' 名前とメールアドレスを確認して下さい<br>';
