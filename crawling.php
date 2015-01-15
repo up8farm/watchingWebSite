@@ -1,5 +1,5 @@
 <?php
-require_once('connectDb.php');
+require_once('func.php');
 
 //crontabに登録し、定期的に実行
 
