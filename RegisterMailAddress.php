@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
     $output_form = true;
 }
 
-if (!empty($mail) && !empty($name)) {
+if (isMail($mail) && !empty($name)) {
     $db = getDb();
 
     //tb_send_mailテーブルにフォームから入力された名前とメールアドレスを挿入する
