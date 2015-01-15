@@ -7,18 +7,18 @@ if (isset($_POST['submit'])) {
     $name = htmlspecialchars($_POST['name'], ENT_QUOTES);
     $mail = htmlspecialchars($_POST['mail'], ENT_QUOTES);
 
-    if (empty($mail) && empty($name)) {
-        echo ' 名前とアドレスを入力して下さい<br>';
+    if (!isMail($mail) && empty($name)) {
+        echo ' 名前とメールアドレスを確認して下さい<br>';
         $output_form = true;
     }
     
-    if (!empty($mail) && empty($name)) {
-        echo ' 名前を入力して下さい<br>';
+    if (isMail($mail) && empty($name)) {
+        echo ' 名前を確認して下さい<br>';
         $output_form = true;
     }
     
-    if (empty($mail) && !empty($name)) {
-        echo ' アドレスを入力して下さい<br>';
+    if (isMail($mail) && !empty($name)) {
+        echo ' アドレスを確認して下さい<br>';
         $output_form = true;
     }
     
@@ -35,7 +35,9 @@ if (!empty($mail) && !empty($name)) {
     $stmt->bindValue(':mail', $mail, PDO::PARAM_STR);
 
     $stmt->execute();
-    echo $mail . $name . "を登録しました" . "<br>";
+    echo '名前：' . $name . '<br>';
+    echo 'メール：' . $mail . '<br>';
+    echo 'を登録しました' . '<br>';
     echo '<a href="menu.php">メニュー画面へ</a>';
 }
 
