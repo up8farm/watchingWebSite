@@ -1,6 +1,11 @@
 <?php
     require_once('func.php');
 
+    if (isset($_POST['submit'] and !isset($_POST['name'])){
+        callAlert('名前を入力してください');
+        die();
+    }
+
     if (isset($_POST['submit'])
         and isset($_POST['name'])
         and isset($_POST['address'])){//メールアドレス登録ボタンが押されたら
@@ -16,9 +21,6 @@
         $stmt->bindValue(':address', $address ,PDO::PARAM_STR);
 
         $stmt->execute();
-    }
-    if (!isset($_POST['name']){
-        callAlert('名前を入力してください');
     }
 ?>
 
