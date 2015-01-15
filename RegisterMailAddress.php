@@ -35,7 +35,7 @@ if (!empty($address) && !empty($name)) {
     $stmt->bindValue(':address', $address, PDO::PARAM_STR);
 
     $stmt->execute();
-    echo $address . $name . "を登録しました" . <br>;
+    echo $address . $name . "を登録しました" . "<br>";
     echo '<a href="menu.php">メニュー画面へ</a>';
 }
 
