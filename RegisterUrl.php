@@ -1,26 +1,60 @@
 <?php
-    header("Content-Type: text/html; charset=UTF-8");
-    require_once('func.php');
+header("Content-Type: text/html; charset=UTF-8");
+require_once('func.php');
 
-    if(isset($_POST['submit'])){//メールアドレス登録ボタンが押されたら
-        $title = htmlspecialchars($_POST['title'], ENT_QUOTES);
-        $url = htmlspecialchars($_POST['url'], ENT_QUOTES);
-        $hash = hash_file('md5', $url);
-  
-        $db = getDb();
+if (isset($_POST['submit'])) {
 
-        $stmt = $db->prepare('INSERT INTO tb_crawling_url (title, url, hash) values(:title, :url, :hash)');
-        $stmt->bindValue(':title', $title ,PDO::PARAM_STR);
-        $stmt->bindValue(':url', $url ,PDO::PARAM_STR);
-        $stmt->bindValue(':hash', $hash ,PDO::PARAM_STR);
+    $title = htmlspecialchars($_POST['title'], ENT_QUOTES);
+    $url = htmlspecialchars($_POST['url'], ENT_QUOTES);
 
-        $stmt->execute();
+    $output_form = false;
+
+    if (empty($title) && !isUrl($url)) {
+        echo ' タイトルとURLを確認して下さい<br>';
+        $output_form = true;
     }
-?>
 
-<p>クローリングURL登録</p>
-<form method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
-    タイトル：<input type="text" name="title"/><br>
-    URL：<input type="text" name="url"/><br>
-    <input type="submit" name="submit" value="クローリングURL登録"/>
-</form>
+    if (empty($title) && isUrl($url)) {
+        echo ' タイトルを確認して下さい<br>';
+        $output_form = true;
+    }
+
+    if (!empty($title) && !isUrl($url)) {
+        echo ' URLを確認して下さい<br>';
+        $output_form = true;
+    }
+} else {
+    $output_form = true;
+}
+
+if (!empty($title) && isUrl($url)) {
+
+    $hash = hash_file('md5', $url);
+
+    $db = getDb();
+
+    $stmt = $db->prepare('INSERT INTO tb_crawling_url (title, url, hash) values(:title, :url, :hash)');
+    $stmt->bindValue(':title', $title, PDO::PARAM_STR);
+    $stmt->bindValue(':url', $url, PDO::PARAM_STR);
+    $stmt->bindValue(':hash', $hash, PDO::PARAM_STR);
+
+    $stmt->execute();
+
+    echo 'タイトル：' . $title . '<br>';
+    echo 'URL：' . $url . '<br>';
+    echo 'を登録しました' . '<br>';
+    echo '<a href="menu.php">メニュー画面へ</a>';
+}
+
+if ($output_form) {
+    ?>
+    <p>監視URL登録</p>
+    <form method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
+        タイトル：<input type="text" name="title"/><br>
+        URL：<input type="text" name="url"/><br>
+        <input type="submit" name="submit" value="監視URL登録"/>
+    </form>
+    <a href="menu.php">メニュー画面へ</a>
+    <?php
+}
+?>
