@@ -83,3 +83,6 @@ crawling.phpをクーロンに登録し、監視間隔を設定
 
 30分毎に実行
 */30 * * * * /usr/bin/php /var/www/watchingWebSite/crawling.php
+
+ブラウザからアクセス
+http://IPアドレスwatchingWebSite/crawling.php
