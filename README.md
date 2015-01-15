@@ -66,7 +66,7 @@ gmailアカウントからのメール送信設定
 
     $ mysql -u root -p
     
-    mysql> source /var/www/test/create_db_table.sql
+    mysql> source /var/www/watchingWebSite/create_db_table.sql
     
 
 
