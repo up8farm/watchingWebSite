@@ -1,4 +1,5 @@
 <?php
+    header("Content-Type: text/html; charset=UTF-8");
     require_once('func.php');
 
     if(isset($_POST['submit'])){//メールアドレス登録ボタンが押されたら
