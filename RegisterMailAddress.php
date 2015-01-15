@@ -1,12 +1,13 @@
 <?php
     require_once('func.php');
 
-    if(isset($_POST['submit'])){//メールアドレス登録ボタンが押されたら
+    if (isset($_POST['submit'])
+        and isset($_POST['name'])
+        and isset($_POST['address'])){//メールアドレス登録ボタンが押されたら
+        
         $name = htmlspecialchars($_POST['name'], ENT_QUOTES);
         $address = htmlspecialchars($_POST['address'], ENT_QUOTES);
         
-        $hoge = '<script>alert("アラート表示テスト");</script>';
-
         $db = getDb();
         
         //tb_send_mailテーブルにフォームから入力された名前とメールアドレスを挿入する
@@ -15,6 +16,9 @@
         $stmt->bindValue(':address', $address ,PDO::PARAM_STR);
 
         $stmt->execute();
+    }
+    if (!isset($_POST['name']){
+        callAlert('名前を入力してください');
     }
 ?>
 
