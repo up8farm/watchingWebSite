@@ -17,10 +17,10 @@ function getDb() {
 }
 
 /**
-     * URLとして正しいか判定
-     * @param string $url チェックするメールアドレス
-     * @return boolean 正しければtrueを返す
-     */
+ * URLとして正しいか判定
+ * @param string $url チェックするメールアドレス
+ * @return boolean 正しければtrueを返す
+ */
     function isUrl($url) {
         if (preg_match("/^http(:\/\/[-_.!~*\'()a-zA-Z0-9;\/?:\@&=+\$,%#]+)$/", $url)) {
             return true;
@@ -30,10 +30,10 @@ function getDb() {
     }
 
 /**
-     * メールアドレスとして正しいか判定
-     * @param string $mail チェックするメールアドレス
-     * @return boolean 正しければtrueを返す
-     */
+ * メールアドレスとして正しいか判定
+ * @param string $mail チェックするメールアドレス
+ * @return boolean 正しければtrueを返す
+ */
     function isMail($mail) {
       if (preg_match("/^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/", $mail)) {
         return true;
@@ -41,13 +41,3 @@ function getDb() {
         return false;
       }
     }
-
-/**
- * JavaScriptのalertを呼び出す
- * @param string $massage 表示するメッセージ
- */
-function callAlert($massage) {
-    echo '<script type="text/javascript">';
-    echo 'alert("' . $massage . '")';
-    echo '</script>';
-}
