@@ -68,6 +68,6 @@ gmailアカウントからのメール送信設定
     
     mysql> source /var/www/watchingWebSite/create_db_table.sql
     
-connectDb.phpをエディタで開き、データベースに接続するユーザ名($user)、パスワード($pass)を変更する
+func.phpをエディタで開き、getDb関数の中にあるユーザ名($user)、パスワード($pass)を変更する
     
-    $ vi /var/www/watchingWebSite/connectDb.php
+    $ vi /var/www/watchingWebSite/func.php
