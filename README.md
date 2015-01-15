@@ -76,13 +76,15 @@ crawling.phpをクーロンに登録し、監視間隔を設定
 
     $ crontab -e
     
-設定例
+クーロン設定例
 
 5分毎に実行
-*/5 * * * * /usr/bin/php /var/www/watchingWebSite/crawling.php
+
+    */5 * * * * /usr/bin/php /var/www/watchingWebSite/crawling.php
 
 30分毎に実行
-*/30 * * * * /usr/bin/php /var/www/watchingWebSite/crawling.php
+
+    */30 * * * * /usr/bin/php /var/www/watchingWebSite/crawling.php
 
 ブラウザからアクセスし、通知メールアドレス、監視URLを登録
 http://IPアドレス/watchingWebSite/menu.php
