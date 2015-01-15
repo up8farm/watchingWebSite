@@ -48,7 +48,7 @@ if (!empty($title) && isUrl($url)) {
 
 if ($output_form) {
     ?>
-    <p>監視URL登録</p>
+    <h1>監視URL登録</h1>
     <form method="post" action="<?php echo $_SERVER['SCRIPT_NAME']; ?>">
         タイトル：<input type="text" name="title"/><br>
         URL：<input type="text" name="url"/><br>
