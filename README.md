@@ -57,7 +57,7 @@ gmailアカウントからのメール送信設定
     UseSTARTTLS=YES
     UseTLS=Yes
 
-Apacheのルートディレクトリでファイルを取得
+Apacheのルートディレクトリにファイルを取得
 
     $ cd /var/www
     $ git clone https://github.com/up8farm/test.git
@@ -71,3 +71,15 @@ Apacheのルートディレクトリでファイルを取得
 func.phpをエディタで開き、getDb関数の中にあるユーザ名($user)、パスワード($pass)を変更
     
     $ vi /var/www/watchingWebSite/func.php
+
+crawling.phpをクーロンに登録
+
+    $ crontab -e
+    
+設定例
+
+5分毎に実行
+*/5 * * * * /usr/bin/php /var/www/watchingWebSite/crawling.php
+
+30分毎に実行
+*/30 * * * * /usr/bin/php /var/www/watchingWebSite/crawling.php
