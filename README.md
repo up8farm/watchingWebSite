@@ -34,6 +34,9 @@ ssmtpのインストール
 
 gmailアカウントからのメール送信設定
 
+参考サイトURL
+http://www.limemo.net/blog/2013/09/%E3%83%A9%E3%82%BA%E3%83%99%E3%83%AA%E3%83%BC%E3%83%91%E3%82%A4raspbian%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%8B-5%E5%88%86%E3%81%A7%E3%83%A1%E3%83%BC%E3%83%AB%E3%82%92%E9%80%81.html
+
     $ cd /etc/ssmtp
     $ mv ssmtp.conf bak_ssmtp.conf
     $ vi ssmtp.conf
