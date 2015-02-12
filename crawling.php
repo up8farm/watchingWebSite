@@ -34,7 +34,7 @@ foreach($stmt as $row){
  */
 function sendMail($subject, $msg) {
     mb_internal_encoding("UTF-8");
-    $from = 'From:raspberrypi777@gmail.com';
+    $from = 'From:raspberrypi@gmail.com';
     $db = getDb();
     $sql = 'SELECT mail FROM tb_send_mail';
     foreach($db->query($sql) as $row){
