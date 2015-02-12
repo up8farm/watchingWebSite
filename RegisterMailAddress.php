@@ -30,7 +30,6 @@ if (isset($_POST['submit'])) { // 通知メールアドレス登録ボタンが�
 if (isMail($mail) && !empty($name)) {
     $db = getDb();
 
-    // tb_send_mailテーブルにフォームから入力された名前とメールアドレスを挿入する
     $stmt = $db->prepare('INSERT INTO tb_send_mail (name, mail) values(:name, :mail)');
     $stmt->bindValue(':name', $name, PDO::PARAM_STR);
     $stmt->bindValue(':mail', $mail, PDO::PARAM_STR);
