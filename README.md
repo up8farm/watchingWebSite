@@ -1,25 +1,29 @@
 #このプログラムについて
-登録したURLを定期的に巡回し、変更があればメールで通知します。
+登録したURLを定期的に巡回し、変更があればメールで通知
 
-DeleteMailAddress.php
+DeleteMailAddress.php  
 通知メールアドレス削除フォーム生成
 
-DeleteUrl.php
+DeleteUrl.php  
 監視URL削除フォーム生成
 
-RegisterMailAddress.php
+RegisterMailAddress.php  
 通知メールアドレス登録フォーム生成
 
-RegisterUrl.php
+RegisterUrl.php  
 監視URL登録フォーム生成
 
-crawling.php
+crawling.php  
 クーロンに登録し監視URLを定期的に巡回
 
-create_db_table.sql
+create_db_table.sql  
 データベース作成用スクリプト
 
-func.php
+func.php  
+外部関数ファイル
+
+menu.php  
+メニュー画面の生成
 
 
 
