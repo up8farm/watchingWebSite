@@ -2,7 +2,7 @@
 header("Content-Type: text/html; charset=UTF-8");
 require_once('func.php');
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) { // 監視URL登録ボタンが押された時
 
     $title = htmlspecialchars($_POST['title'], ENT_QUOTES);
     $url = htmlspecialchars($_POST['url'], ENT_QUOTES);
@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
         echo ' URLを確認して下さい<br>';
         $output_form = true;
     }
-} else {
+} else { // 初回表示
     $output_form = true;
 }
 
