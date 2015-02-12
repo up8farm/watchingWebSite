@@ -54,7 +54,7 @@ http://www.limemo.net/blog/2013/09/%E3%83%A9%E3%82%BA%E3%83%99%E3%83%AA%E3%83%BC
 Apacheのルートディレクトリにファイルを取得
 
     $ cd /var/www
-    $ git clone https://github.com/up8farm/test.git
+    $ git clone https://github.com/up8farm/watchingWebSite.git
     
 データベースの作成
 
