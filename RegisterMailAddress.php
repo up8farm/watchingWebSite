@@ -2,7 +2,7 @@
 header("Content-Type: text/html; charset=UTF-8");
 require_once('func.php');
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) { // 通知メールアドレス登録ボタンが押された時
 
     $name = htmlspecialchars($_POST['name'], ENT_QUOTES);
     $mail = htmlspecialchars($_POST['mail'], ENT_QUOTES);
@@ -23,14 +23,14 @@ if (isset($_POST['submit'])) {
         $output_form = true;
     }
     
-} else {
+} else {　// 初回表示
     $output_form = true;
 }
 
 if (isMail($mail) && !empty($name)) {
     $db = getDb();
 
-    //tb_send_mailテーブルにフォームから入力された名前とメールアドレスを挿入する
+    // tb_send_mailテーブルにフォームから入力された名前とメールアドレスを挿入する
     $stmt = $db->prepare('INSERT INTO tb_send_mail (name, mail) values(:name, :mail)');
     $stmt->bindValue(':name', $name, PDO::PARAM_STR);
     $stmt->bindValue(':mail', $mail, PDO::PARAM_STR);
