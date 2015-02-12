@@ -27,6 +27,7 @@ if (isset($_POST['submit'])) { // 監視URL登録ボタンが押された時
     $output_form = true;
 }
 
+// フォームに入力された値に問題が無ければデータベースに登録
 if (!empty($title) && isUrl($url)) {
 
     $hash = hash_file('md5', $url);
