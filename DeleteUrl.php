@@ -7,16 +7,18 @@
 
     $db = getDb();
 
-    if (isset($_POST['submit'])) {
-        //削除するクエリ
+    if (isset($_POST['submit'])) { // 監視URL削除ボタンが押された時
+        
+        //　チェックが付けられた監視URLを削除
         foreach ($_POST['todelete'] as $delete_id) {
             $db->query("DELETE FROM tb_crawling_url WHERE id = $delete_id");
         }
     }
 
-    //一覧を表示
+    // 監視URL一覧を取得
     $stmt = $db->query('SELECT id, title, url, hash FROM tb_crawling_url');
 
+　　// 監視URL一覧を表示
     foreach ($stmt as $row) {
         echo '<input type="checkbox" value="' . $row['id'] . '" name="todelete[]">';
         echo $row['title'] . " : ";
